@@ -1,5 +1,5 @@
 import React from 'react';
-import '../UI/Review_style.css'
+import '../UI/Review_style.css';
 
 const Review = ({photo, name, surname, reviewText, workPhoto}) => {
     return (
@@ -16,7 +16,7 @@ const Review = ({photo, name, surname, reviewText, workPhoto}) => {
                 {/* Добавьте второе фото клиента, если необходимо */}
             </div>
             <div className="work-photo">
-                <img src={workPhoto} alt="Фотография работы" />
+                <img src={workPhoto} alt="Фотография работы"/>
             </div>
         </div>
     );

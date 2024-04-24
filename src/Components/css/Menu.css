@@ -1,0 +1,19 @@
+.con {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    
+  }
+
+.catalog{
+  display: flex;
+}
+
+.opt{
+  display: flex;
+}
+
+.contaty {
+  margin-right: 20px;
+}

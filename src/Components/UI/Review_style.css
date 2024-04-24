@@ -1,9 +1,3 @@
-.reviews-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Два столбца */
-  gap: 20px; /* Промежуток между блоками */
-}
-
 .review {
   display: flex;
   flex-direction: column;
@@ -13,13 +7,21 @@
   margin-bottom: 20px;
   text-align: center;
   border: none;
-  border-right: 1px solid #000;
+
+  margin-left: 19px;
+  margin-right: 10px;
+
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow:  5px 5px 10px #d9d9d9,
+               -5px -5px 10px #ffffff;
 }
 
 .review-header {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  flex-grow: 1;
 }
 
 .review-photo {
@@ -29,19 +31,28 @@
   margin-right: 10px;
 }
 
-
 .review-details h2 {
   margin: 0;
 }
 
 .review-content {
+  display: flex;
   margin-top: 10px;
   text-align: left;
+  flex-grow: 4;
+  font-size: 14px;
 }
-
+.work-photo {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
+  justify-content: center;
+}
 .work-photo img {
-  width: 60%;
-  max-height: 600px; /* Настройте высоту по вашему желанию */
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  margin-top: 25px;
 
   object-fit: cover; /* Обрежет изображение, чтобы оно заполняло контейнер */
   margin-bottom: 10px;

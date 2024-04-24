@@ -1,6 +1,9 @@
 import React from "react";
 import "../css/stylePage1.css";
 import Review from "../UI/Review";
+import Header from "../UI/Header";
+import Menu from "../Menu";
+import Footer from "../Footer/Footer";
 
 const Page1 = () => {
   const Reviews = [
@@ -47,25 +50,26 @@ const Page1 = () => {
   ];
 
   return (
-    <div class="reviews-container">
-      <div class="reviews">
-        {Reviews.map((el) => {
-          return (
-            <Review
-              photo={el.photo}
-              name={el.name}
-              surname={el.surname}
-              reviewText={el.reviewText}
-              workPhoto={el.workPhoto}
-            />
-          );
-        })}
-        <div className="buttons">
-          <button class="prev-button">Предыдущий</button>
-          <button class="next-button">Следующий</button>
+    <>
+      <Header/>
+      <Menu />
+      <div className="reviews-container">
+        <div className="reviews">
+          {Reviews.map((el) => {
+            return (
+              <Review
+                photo={el.photo}
+                name={el.name}
+                surname={el.surname}
+                reviewText={el.reviewText}
+                workPhoto={el.workPhoto}
+              />
+            );
+          })}
         </div>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };
 
