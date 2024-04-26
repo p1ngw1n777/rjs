@@ -2,6 +2,7 @@ import React, {useState, useDispatch} from 'react';
 
 import axios from 'axios';
 import { loginFailure, loginSuccess } from '../../Store/reducer/StatesSlice';
+import { userService } from '../../api/services/login.services';
 
 
 const LoginForm = () => {
@@ -10,10 +11,14 @@ const LoginForm = () => {
     //const dispatch = useDispatch();
 
     const handleSubmit = async (event) => {    
-        event.preventDefualt();
+        event.preventDefault();
         try{
-            const responce = await axios.post('/login', {username, password});
             alert('Good');
+            const responce = await userService.getUser({username, password});
+            
+            alert('Good');
+
+
             /*dispatch(loginSuccess());*/
         }
         catch{
@@ -54,7 +59,7 @@ const LoginForm = () => {
                         />
                     </div>
                     <button type="submit"
-                            onClick={handleSubmit}>Войти</button>
+                            onClick={async (e) => await handleSubmit(e)}>Войти</button>
                 </form>
             </div>
         </div>
