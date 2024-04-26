@@ -7,12 +7,17 @@ import Page1 from './Components/Pages/Page1';
 import './global.css'
 import { Provider } from 'react-redux';
 import { store } from './Store/store';
+import PageLogin from './Components/Pages/PageLogin';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Page1/>
   },
+  {
+    path: "/loginform",
+    element: <PageLogin/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
