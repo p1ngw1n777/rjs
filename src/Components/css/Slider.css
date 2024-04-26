@@ -1,0 +1,21 @@
+.slick-list img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.slick-list {
+    border-radius: 25px;
+}
+
+.slick-slider {
+    display: flex; 
+    border-radius: 25px; 
+    justify-content: center;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+/* Стилизация слайдов */
+.slick-slide {
+    margin: 0px;
+  }

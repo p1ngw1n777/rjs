@@ -4,6 +4,7 @@ import Review from "../UI/Review";
 import Header from "../UI/Header";
 import Menu from "../Menu";
 import Footer from "../Footer/Footer";
+import MySlider from '../UI/MySlider'
 
 const Page1 = () => {
   const Reviews = [
@@ -53,6 +54,7 @@ const Page1 = () => {
     <>
       <Header/>
       <Menu />
+      <MySlider/>
       <div className="reviews-container">
         <div className="reviews">
           {Reviews.map((el) => {

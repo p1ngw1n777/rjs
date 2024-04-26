@@ -40,20 +40,28 @@ const Footer = () => {
                 </div>
                 <div className="footer-center">
                     <button>
-                        <img src="" alt="" />
+                        <h1>WB</h1>
                     </button>
                     <button>
-                        <img src="" alt="" />
+                        <h1>OZON</h1>
                     </button>
                     <button>
-                        <img src="" alt="" />
+                        <h1>VK</h1>
                     </button>
                     <button>
-                        <img src="" alt="" />
-                        </button>
-                    <button>
-                        <img src="" alt="" />
+                        <h1>TG</h1>
                     </button>
+                    <button>
+                        <h1>WA</h1>
+                    </button>
+                </div>
+                <div className="footer-bottom">
+                    <div className="copy">
+                        <>2024 © DOMINI LASH</>
+                    </div>
+                    <div className="item-pays">
+                        
+                    </div>
                 </div>
             </footer>
         </div>
