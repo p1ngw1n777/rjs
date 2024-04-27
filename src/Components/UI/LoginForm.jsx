@@ -1,29 +1,22 @@
-import React, {useState, useDispatch} from 'react';
+import React, {useState} from 'react';
 
-import axios from 'axios';
-import { loginFailure, loginSuccess } from '../../Store/reducer/StatesSlice';
 import { userService } from '../../api/services/login.services';
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
     const [username, setUserName] = useState('');
     const [password, setUserPassword] = useState('');
-    //const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {    
         event.preventDefault();
         try{
-            alert('Good');
             const responce = await userService.getUser({username, password});
-            
             alert('Good');
-
-
-            /*dispatch(loginSuccess());*/
         }
         catch{
             alert('Bad');
-            //dispatch(loginFailure());
         }
     }
 
@@ -33,6 +26,10 @@ const LoginForm = () => {
 
     const handlePasswordChange = (event) => {
         setUserPassword(event.target.value);
+    }
+
+    const toToReg = (event) => {
+        navigate('/registration')
     }
 
     return (
@@ -57,9 +54,17 @@ const LoginForm = () => {
                             value={password}
                             onChange={handlePasswordChange}
                         />
+                        
+                    
                     </div>
-                    <button type="submit"
+                    <div>
+                        <button type="submit"
                             onClick={async (e) => await handleSubmit(e)}>Войти</button>
+                    </div>
+                    <div>
+                        <a href='#'
+                            onClick={toToReg}>У меня уже есть аккаунт</a>
+                    </div>
                 </form>
             </div>
         </div>

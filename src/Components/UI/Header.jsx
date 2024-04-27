@@ -12,10 +12,15 @@ const Header = () => {
     navigate('/loginform');
   }
 
+  const goToHome = (event) => {
+    navigate('/')
+  }
+
   return (
     <header className="header">
       <div className="header-logo">
-        <h1 className="header-logo-text">DOMINI</h1>
+        <h1 className="header-logo-text"
+            onClick={goToHome}>DOMINI</h1>
       </div>
       <div className="header-search">
         <input

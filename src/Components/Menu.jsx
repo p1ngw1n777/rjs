@@ -4,7 +4,7 @@ import './css/Menu.css';
 
 const Menu = () => {
     return (
-        <div class='con'>
+        <div className='con'>
             <div className="catalog">
                 <a href="#">Каталог</a>
             </div>

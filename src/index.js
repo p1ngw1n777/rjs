@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { RouterProvider,  createBrowserRouter} from 'react-router-dom';
 import Page1 from './Components/Pages/Page1';
+import PageLogin from './Components/Pages/PageLogin';
+import PageReg from './Components/Pages/PageReg';
 
 import './global.css'
 import { Provider } from 'react-redux';
 import { store } from './Store/store';
-import PageLogin from './Components/Pages/PageLogin';
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/loginform",
     element: <PageLogin/>
+  }, 
+  {
+    path: "/registration",
+    element: <PageReg/>
   }
 ]);
 

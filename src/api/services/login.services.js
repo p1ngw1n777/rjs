@@ -1,4 +1,3 @@
-import axios from "axios"
 import { instance } from "../api.instance"
 
 export const userService = {
