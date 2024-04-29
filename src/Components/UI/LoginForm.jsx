@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import { userService } from '../../api/services/login.services';
 import { useNavigate } from 'react-router-dom';
-
+import "../css/text.css";
 
 const LoginForm = () => {
     const [username, setUserName] = useState('');
@@ -34,8 +34,7 @@ const LoginForm = () => {
 
     return (
         <div>
-            <div>
-                <h2>Вход</h2>
+            <div className='test'>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="username">Имя пользователя:</label>
