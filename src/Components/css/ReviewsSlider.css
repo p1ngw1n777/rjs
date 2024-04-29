@@ -1,0 +1,33 @@
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.reviews::before {
+    display: flex;
+    align-self: center;
+    content: '<';
+}
+.reviews-container::after {
+    display: flex;
+    align-self: center;
+    content: '>';
+}
+
+.reviews {
+    width: 99vw;
+    white-space: wrap;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.review {
+    display: inline-block;
+    width: 450px; /* Ширина блока отзыва */
+    padding: 10%;
+    max-width: 100%; /* Устанавливаем максимальную ширину для текста */
+    overflow: hidden; /* Обрезаем текст, который выходит за пределы */
+}

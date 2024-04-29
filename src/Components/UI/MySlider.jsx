@@ -10,7 +10,7 @@ const MySlider = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 50,
+        speed: 0.1,
         slidesToShow: 1,
         slidesToScroll: 1
       };
