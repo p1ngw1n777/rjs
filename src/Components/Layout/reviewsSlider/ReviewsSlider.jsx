@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Review from "../../UI/Review";
 import { useDispatch, useSelector } from "react-redux";
-import { userService } from "../../../api/services/reviews.services";
+import { dataService } from "../../../api/services/data.services";
 import { reviewToState } from "../../../Store/reducer/StatesSlice"
 
 
@@ -12,8 +12,8 @@ const ReviewsSlider = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await userService.getReviews();
-          dispatch(reviewToState(response))
+          const response = await dataService.getReviews();
+          dispatch(reviewToState(response.obj1))
         } 
         catch (error) {
           console.error('Ошибка при выполнении запроса:', error);

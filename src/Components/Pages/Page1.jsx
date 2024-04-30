@@ -5,7 +5,7 @@ import Menu from "../Menu";
 import Footer from "../Footer/Footer";
 import MySlider from '../UI/MySlider'
 import ReviewsSlider from "../Layout/reviewsSlider/ReviewsSlider";
-import CategoryCard from "../Layout/category/CategoryCard";
+import CategoryRow from "../UI/CategoryRow";
 
 const Page1 = () => {
   return (
@@ -13,10 +13,8 @@ const Page1 = () => {
       <Header/>
       <Menu />
       <MySlider/>
+      <CategoryRow/>
       <ReviewsSlider/>
-      <CategoryCard 
-        imageUrl={'https://dominilash.ru/upload/iblock/10a/d993wprcus8wescxk1flu2bm0u7xjbp5/Ellipse-1883.png'}
-        category={'Клей'}/>
       <Footer/>
     </>
   );

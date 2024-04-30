@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "../css/text.css"
-import { userService } from '../../api/services/registration.services';
+import { userService } from '../../api/services/auth.services';
 
 const RegisterForm = () => {
     const [username, setUserName] = useState('');

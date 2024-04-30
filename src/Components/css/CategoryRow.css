@@ -1,0 +1,7 @@
+.categoryRow{
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+    padding: 70px;
+    align-items: center;
+}

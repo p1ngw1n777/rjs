@@ -8,5 +8,14 @@ export const userService = {
     console.log(res);  
   
     return res
+  },
+
+  async registration(data) {
+    const res = await instance.post('/registration', {
+      data
+    })
+    console.log(res);  
+  
+    return res
   }
 }
