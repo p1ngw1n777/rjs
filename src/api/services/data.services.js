@@ -20,5 +20,16 @@ export const dataService = {
       console.error('Ошибка при выполнении запроса:', error);
       throw error;
     }
-  }
+  },
+  
+  async getCatalog() {
+    try {
+      const res = await instance.get('/catalog');
+      return res.data;
+    } 
+    catch (error) { 
+      console.error('Ошибка при выполнении запроса:', error);
+      throw error;
+    }
+  },
 }

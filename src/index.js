@@ -5,6 +5,7 @@ import { RouterProvider,  createBrowserRouter} from 'react-router-dom';
 import Page1 from './Components/Pages/Page1';
 import PageLogin from './Components/Pages/PageLogin';
 import PageReg from './Components/Pages/PageReg';
+import PageCatalog from './Components/Pages/PageCatalog'
 
 import './global.css'
 import { Provider } from 'react-redux';
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/registration",
     element: <PageReg/>
+  },
+  {
+    path: "/catalog",
+    element: <PageCatalog/>
   }
 ]);
 

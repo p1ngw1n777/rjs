@@ -4,16 +4,6 @@
     justify-content: center;
     margin-top: 0px;
 }
-.reviews::before {
-    display: flex;
-    align-self: center;
-    content: '<';
-}
-.reviews-container::after {
-    display: flex;
-    align-self: center;
-    content: '>';
-}
 
 .reviews {
     width: 99vw;

@@ -5,9 +5,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { dataService } from '../../api/services/data.services';
 import { categoryToState } from '../../Store/reducer/StatesCategory';
 
-const Category_photo = () => {
+const CategoryRow = () => {
     const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
     const dispatch = useDispatch();
+    const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.category_parent === null)
+    
+    // if(Array.isArray(CategoryFromRedux))
+    // {
+    // 
+    // }
+    // else {
+    //   console.log('CategoryFromRedux is not array')
+    // }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,10 +31,11 @@ const Category_photo = () => {
         fetchData(); 
       }, []); 
     
+
     return (
         <>
             <div className="categoryRow">
-                {CategoryFromRedux.map((el, index) => {
+                {CategoryFromReduxFiltered.map((el, index) => {
                     return (
                         <CategoryCard
                             index={index}
@@ -38,4 +48,4 @@ const Category_photo = () => {
     );
 };
 
-export default Category_photo;
+export default CategoryRow;
