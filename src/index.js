@@ -6,10 +6,11 @@ import Page1 from './Components/Pages/Page1';
 import PageLogin from './Components/Pages/PageLogin';
 import PageReg from './Components/Pages/PageReg';
 import PageCatalog from './Components/Pages/PageCatalog'
+import { PersistGate } from 'redux-persist/integration/react'
 
 import './global.css'
 import { Provider } from 'react-redux';
-import { store } from './Store/store';
+import { persistor, store } from './Store/store';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,11 +33,13 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <PersistGate loading={null} persistor={persistor}>
     <Provider store={store}>
       <RouterProvider router={router}>
         <App />
       </RouterProvider>
     </Provider>
+    </PersistGate>
   </React.StrictMode>
 );
 

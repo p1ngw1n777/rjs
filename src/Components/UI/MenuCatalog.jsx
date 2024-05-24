@@ -3,6 +3,7 @@ import ItemCatolog from "./ItemCatolog";
 import { useDispatch, useSelector } from "react-redux";
 import { dataService } from "../../api/services/data.services";
 import { categoryToItemsState } from "../../Store/reducer/StatesCatalog";
+import '../css/MenuCatalog.css'
 
 const MenuCatalog = () => {
   const CategotyMenu = useSelector(
@@ -29,7 +30,7 @@ const MenuCatalog = () => {
       <div className="pagetitle">
         <h3>Ресницы для наращивания</h3>
       </div>
-      <div className="menu-left">
+      <div className="menuleft">
         {CategoryMenuFiltered.map((el, index) => {
             return (
                 <ItemCatolog 

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/MenuCatalog.css'
 
 const ItemCatolog = ({title}) => {
     return (

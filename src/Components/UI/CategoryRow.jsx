@@ -7,22 +7,15 @@ import { categoryToState } from '../../Store/reducer/StatesCategory';
 
 const CategoryRow = () => {
     const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
+    console.log(CategoryFromRedux)
     const dispatch = useDispatch();
     const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.category_parent === null)
-    
-    // if(Array.isArray(CategoryFromRedux))
-    // {
-    // 
-    // }
-    // else {
-    //   console.log('CategoryFromRedux is not array')
-    // }
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             const response = await dataService.getCategories();
-            dispatch(categoryToState(response.obj2)) 
+            dispatch(categoryToState(response.obj2))
           } 
           catch (error) {
             console.error('Ошибка при выполнении запроса:', error);
@@ -36,6 +29,7 @@ const CategoryRow = () => {
         <>
             <div className="categoryRow">
                 {CategoryFromReduxFiltered.map((el, index) => {
+                    console.log(el.category_url_photo)
                     return (
                         <CategoryCard
                             index={index}
