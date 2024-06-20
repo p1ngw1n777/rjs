@@ -11,7 +11,6 @@ const PageCategory = () => {
             <Header/>
             <Menu />
             <MenuCatalog/>
-            <MenuCatalogRight/>
             <Footer/>
         </div>
     );

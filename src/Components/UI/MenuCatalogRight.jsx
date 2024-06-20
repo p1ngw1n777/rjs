@@ -6,9 +6,10 @@ import CategoryCard from '../Layout/category/CategoryCard';
 const MenuCatalogRight = () => {
     const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
     const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.category_parent === null)
+    
 
     return (
-        <div className="categoryRow">
+        <div className="menu-right">
                 {CategoryFromReduxFiltered.map((el, index) => {
                     console.log(el.category_url_photo)
                     return (
