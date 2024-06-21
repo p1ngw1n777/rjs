@@ -11,6 +11,7 @@ const Menu = () => {
         Navigate('/catalog')
     }
     
+    
     const goToOpt = (event) => {
         Navigate('/opt')
     }

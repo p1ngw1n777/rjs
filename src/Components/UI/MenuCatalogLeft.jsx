@@ -8,24 +8,26 @@ import { dataService } from '../../api/services/data.services';
 
 const MenuCatalogLeft = () => {
     const CategotyMenu = useSelector(
-        (state) => state.StatesCatalog.itemsOfCategory
-      );
-      const dispatch = useDispatch();
-      const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
+      (state) => state.StatesCatalog.itemsOfCategory
+    );
+    const dispatch = useDispatch();
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await dataService.getCatalog();
+          console.log(response)
+          dispatch(categoryToItemsState(response.categoryFromDB));
+        } 
+        catch (error) {
+          console.error("Ошибка при выполнении запроса:", error);
+        }
+      };
+      fetchData();
+    }, []);
+
     
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await dataService.getCatalog();
-            dispatch(categoryToItemsState(response.categoryFromDB));
-          } catch (error) {
-            console.error("Ошибка при выполнении запроса:", error);
-          }
-        };
-        fetchData();
-      }, []);
-    
-      console.log('',CategoryMenuFiltered)
+    const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
     return (
         <div className="menu-left">
             {CategoryMenuFiltered.map((el, index) => {

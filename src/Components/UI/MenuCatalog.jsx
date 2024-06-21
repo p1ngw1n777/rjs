@@ -9,10 +9,11 @@ import MenuCatalogRight from "./MenuCatalogRight";
 import MenuCatalogLeft from "./MenuCatalogLeft";
 
 const MenuCatalog = () => {
-  const CategotyMenu = useSelector(
+  /*const CategotyMenu = useSelector(
     (state) => state.StatesCatalog.itemsOfCategory
   );
   const dispatch = useDispatch();
+  // const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
   const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
 
   useEffect(() => {
@@ -25,9 +26,7 @@ const MenuCatalog = () => {
       }
     };
     fetchData();
-  }, []);
-
-  console.log('',CategoryMenuFiltered)
+  }, []);*/
   return (
     <div>
       <div className="pagetitle">

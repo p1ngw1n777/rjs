@@ -1,9 +1,9 @@
 import React from 'react';
 import "../../css/CategoryCard.css"
 
-const CategoryCard = ({imageUrl, category}) => {
+const CategoryCard = ({index1, imageUrl, category}) => {
     return (
-        <div>
+        <div index={index1}>
             <div className="category-card">
                 <div className="category-image-container">
                     <img src={imageUrl} alt="Category" className="category-image" />
