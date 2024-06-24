@@ -1,19 +1,19 @@
 import React from 'react';
 import Header from '../UI/Header';
-import Menu from "../Menu";
+import Menu from "../Menu"
 import Footer from '../Footer/Footer';
-import MenuCatalog from '../UI/MenuCatalog';
-import MenuCatalogLeft from '../UI/MenuCatalogLeft';
+import MenuCatalogProducts from '../UI/MenuCatalogProducts';
 
-const PageCategory = ({}) => {
+
+const PageForQueryCatalog = () => {
     return (
         <div>
             <Header/>
             <Menu />
-            <MenuCatalog/>
+            <MenuCatalogProducts/>
             <Footer/>
         </div>
     );
 };
 
-export default PageCategory;
+export default PageForQueryCatalog;

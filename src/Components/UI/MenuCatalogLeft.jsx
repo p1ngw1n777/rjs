@@ -27,7 +27,7 @@ const MenuCatalogLeft = () => {
     }, []);
 
     
-    const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
+    const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.categoryId === null)
     return (
         <div className="menu-left">
             {CategoryMenuFiltered.map((el, index) => {

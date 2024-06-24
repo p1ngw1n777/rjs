@@ -1,0 +1,39 @@
+.product-card{
+    display: flex;
+}
+
+.product-image-container{
+    position: relative;
+    display: flex;
+    flex-grow: 6;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.product-image{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-name{
+    display: flex;
+    flex-grow: 2;
+    width: 100%; /* ширина текста равна ширине родительского контейнера */
+    color: black; /* цвет текста белый */
+    padding: 5px; /* добавляем небольшие отступы вокруг текста */
+    margin: 0; /* убираем внешние отступы */
+    text-align: center; /* выравниваем текст по центру */
+}
+
+.product-price{
+    display: flex;
+    flex-grow: 2;
+    width: 100%; /* ширина текста равна ширине родительского контейнера */
+    color: black; /* цвет текста белый */
+    padding: 5px; /* добавляем небольшие отступы вокруг текста */
+    margin: 0; /* убираем внешние отступы */
+    text-align: center; /* выравниваем текст по центру */
+}
+

@@ -6,6 +6,7 @@ import Page1 from './Components/Pages/Page1';
 import PageLogin from './Components/Pages/PageLogin';
 import PageReg from './Components/Pages/PageReg';
 import PageCatalog from './Components/Pages/PageCatalog'
+import PageForQueryCatalog from './Components/Pages/PageForQueryCatalog';
 import { PersistGate } from 'redux-persist/integration/react'
 
 import './global.css'
@@ -27,6 +28,30 @@ const router = createBrowserRouter([
   {
     path: "/catalog",
     element: <PageCatalog/>
+  },
+  {
+    path: "catalog/lashes",
+    element: <PageForQueryCatalog/>
+  },
+  {
+    path: "catalog/glue",
+    element: <PageForQueryCatalog/>
+  },
+  {
+    path: "catalog/preparations",
+    element: <PageForQueryCatalog/>
+  },
+  {
+    path: "catalog/twizers",
+    element: <PageForQueryCatalog/>
+  },
+  {
+    path: "catalog/consumables",
+    element: <PageForQueryCatalog/>
+  },
+  {
+    path: "catalog/dop-oborudovanie",
+    element: <PageForQueryCatalog/>
   }
 ]);
 
