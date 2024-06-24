@@ -19,32 +19,15 @@ export const productsService = {
         console.log(data)
         console.log('/catalog/' + nameUrl)
 
-        const rawResponse = await fetch('https://localhost:3000/catalog/lashes', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          });
-        const content = await rawResponse.json();
-        if(!content)
-            return "Error 228"
-        return content;
-        
-        //  const res = await axios.post(
-        //     'http://localhost:3001/catalog/lashes', 
-        //     { productId1 } )
+      const res = await instance.post('/catalog/lashes', {data, nameUrl});
+      console.log('TUTA: ', res);
+      
+      if(!res){
+        console.log('Error 228')
 
-        // const res = await instance({
-        //     url: '/catalog/lashes',
-        //     method: 'POST',
-        //     body: {productId1}
-        // })
-        // if(!res)
-        //     return "Error 228"
-        //return res
-      },
+      return res;
+      }
+    }
     // async getLashes() {
     //     try {
     //         const res = await instance.get('/catalog/lashes');

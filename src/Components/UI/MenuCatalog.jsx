@@ -1,40 +1,35 @@
 import React, { useEffect } from "react";
-
-import ItemCatolog from "./ItemCatolog";
-import { useDispatch, useSelector } from "react-redux";
 import { dataService } from "../../api/services/data.services";
-import { categoryToItemsState } from "../../Store/reducer/StatesCatalog";
 import '../css/MenuCatalog.css'
 import MenuCatalogRight from "./MenuCatalogRight";
 import MenuCatalogLeft from "./MenuCatalogLeft";
 
 const MenuCatalog = () => {
-  /*const CategotyMenu = useSelector(
-    (state) => state.StatesCatalog.itemsOfCategory
-  );
-  const dispatch = useDispatch();
-  // const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
-  const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.category_parent === null)
+  let res2 = null;
 
-  useEffect(() => {
+  useEffect( () => {
     const fetchData = async () => {
       try {
-        const response = await dataService.getCatalog();
-        dispatch(categoryToItemsState(response.categoryFromDB));
-      } catch (error) {
-        console.error("Ошибка при выполнении запроса:", error);
+        const res2 = await dataService.getCatalog();
+        console.log('Получен запрос от сервера на GET /catalog/:', res2.categoryFromDB)
+        //res2 = response1.categoryFromDB;
+      } 
+      catch (error) {
+        console.error('Ошибка при выполнении запроса:');
       }
-    };
-    fetchData();
-  }, []);*/
+    }; fetchData(); 
+  }, []); 
+
+  //console.log('Получен запрос от сервера на GET /catalog/:', res2)
+
   return (
     <div>
       <div className="pagetitle">
           <h3>Ресницы для наращивания</h3>
       </div>
       <div className="catalogmain">
-        <MenuCatalogLeft/>
-        <MenuCatalogRight/>
+        <MenuCatalogLeft titleCategories={res2}/>
+        <MenuCatalogRight categoriers={res2}/>
       </div>
       <div className="caption">
         Купить материалы для наращивания ресниц 

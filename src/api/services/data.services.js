@@ -36,7 +36,6 @@ export const dataService = {
   async getCatalog() {
     try {
       const res = await instance.get('/catalog');
-      console.log(res.data)
       return res.data;
     } 
     catch (error) { 

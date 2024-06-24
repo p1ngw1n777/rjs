@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import "../css/CategoryRow.css";
 import CategoryCard from '../Layout/category/CategoryCard';
 import { useNavigate } from 'react-router-dom';
-import { productsToState } from '../../Store/reducer/StatesProducts';
 import { dataService } from '../../api/services/data.services';
 
 
-const MenuCatalogRight = () => {
-    const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
-    const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.categoryId === null)
-    
+const MenuCatalogRight = (categories) => {
+    const CategoryFromRedux = categories;
+
     const Navigate = useNavigate();
 
     const goToNextPage = (currentElement) => {
@@ -38,10 +35,12 @@ const MenuCatalogRight = () => {
                 break;
         }
     }
+    const CategoryFiltred = CategoryFromRedux;
+    //const CategoryFiltred = Object.values(CategoryFromRedux).filter(CategoryFromRedux => CategoryFromRedux.categoryId === null)
 
     return (
         <div className="menu-right">
-            {CategoryFromReduxFiltered.map((el, index) => {
+            {/* {CategoryFiltred.map((el, index) => {
                 return (
                     <div key={index} onClick={() => goToNextPage(index)}>
                         <CategoryCard
@@ -50,7 +49,7 @@ const MenuCatalogRight = () => {
                             category={el.category_name}/>
                     </div>
                 );
-            })}
+            })} */}
         </div>
     );
 };

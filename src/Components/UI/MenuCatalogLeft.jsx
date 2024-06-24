@@ -6,37 +6,19 @@ import '../css/MenuCatalog.css';
 import { useEffect } from 'react';
 import { dataService } from '../../api/services/data.services';
 
-const MenuCatalogLeft = () => {
-    const CategotyMenu = useSelector(
-      (state) => state.StatesCatalog.itemsOfCategory
-    );
-    const dispatch = useDispatch();
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await dataService.getCatalog();
-          console.log(response)
-          dispatch(categoryToItemsState(response.categoryFromDB));
-        } 
-        catch (error) {
-          console.error("Ошибка при выполнении запроса:", error);
-        }
-      };
-      fetchData();
-    }, []);
+const MenuCatalogLeft = (titleCategories) => {
+	console.log(titleCategories.categoryFromDB)
+	const CategoryMenu = titleCategories;
 
-    
-    const CategoryMenuFiltered = CategotyMenu.filter(CategotyMenu => CategotyMenu.categoryId === null)
     return (
         <div className="menu-left">
-            {CategoryMenuFiltered.map((el, index) => {
+            {/* {CategoryMenu.map((el, index) => {
                 return (
                     <ItemCatolog
                         key={index}
                         title={el.category_name}/>
                 )
-            })}
+            })} */}
         </div>
     );
 };
