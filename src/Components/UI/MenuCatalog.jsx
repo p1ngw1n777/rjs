@@ -1,18 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { dataService } from "../../api/services/data.services";
 import '../css/MenuCatalog.css'
 import MenuCatalogRight from "./MenuCatalogRight";
 import MenuCatalogLeft from "./MenuCatalogLeft";
+import { useDispatch, useSelector } from "react-redux";
+import { categoryToState } from '../../Store/reducer/StatesCategory';
 
 const MenuCatalog = () => {
-  let res2 = null;
+  let res2 = null;  
+  const dispatch = useDispatch();
 
   useEffect( () => {
     const fetchData = async () => {
       try {
-        const res2 = await dataService.getCatalog();
-        console.log('Получен запрос от сервера на GET /catalog/:', res2.categoryFromDB)
-        //res2 = response1.categoryFromDB;
+        res2 = await dataService.getCatalog();
+        dispatch(categoryToState(res2.categoryFromDB));
+        console.log('Получен запрос от сервера на GET /catalog/:', res2)
       } 
       catch (error) {
         console.error('Ошибка при выполнении запроса:');
@@ -20,7 +23,7 @@ const MenuCatalog = () => {
     }; fetchData(); 
   }, []); 
 
-  //console.log('Получен запрос от сервера на GET /catalog/:', res2)
+  const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
 
   return (
     <div>
@@ -28,8 +31,8 @@ const MenuCatalog = () => {
           <h3>Ресницы для наращивания</h3>
       </div>
       <div className="catalogmain">
-        <MenuCatalogLeft titleCategories={res2}/>
-        <MenuCatalogRight categoriers={res2}/>
+        <MenuCatalogLeft />
+        <MenuCatalogRight />
       </div>
       <div className="caption">
         Купить материалы для наращивания ресниц 

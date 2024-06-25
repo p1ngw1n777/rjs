@@ -1,4 +1,3 @@
-import axios from "axios";
 import { instance } from "../api.instance";
 
 export const productsService = {
@@ -19,7 +18,7 @@ export const productsService = {
         console.log(data)
         console.log('/catalog/' + nameUrl)
 
-      const res = await instance.post('/catalog/lashes', {data, nameUrl});
+      const res = await instance.post('/catalog/' + nameUrl, { data });
       console.log('TUTA: ', res);
       
       if(!res){
@@ -28,6 +27,7 @@ export const productsService = {
       return res;
       }
     }
+}
     // async getLashes() {
     //     try {
     //         const res = await instance.get('/catalog/lashes');
@@ -92,5 +92,3 @@ export const productsService = {
     //         throw error;
     //     }
     // },
-
-}

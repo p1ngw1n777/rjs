@@ -6,7 +6,7 @@ import { reviewToState } from "../../../Store/reducer/StatesSlice"
 
 
 const ReviewsSlider = () => {
-    const Reviews = useSelector(state=>state.StatesSlice.review);
+    
     const dispatch = useDispatch();
   
     useEffect(() => {
@@ -21,23 +21,26 @@ const ReviewsSlider = () => {
       };
       fetchData(); 
     }, []); 
-  
+	
+    const Reviews = useSelector(state=>state.StatesSlice.review);
     return (
         <div>
             <div className="reviews-container">
                 <div className="reviews">
-                {Reviews.map((el, index) => {
-                    return (
-                    <Review
-                        key={index}
-                        photo={el.photo}
-                        name={el.name}
-                        surname={el.surname}
-                        reviewText={el.text}
-                        workPhoto={el.wphoto}
-                    />
-                    );
-                })}
+                {
+                  Reviews.map((el, index) => {
+                      return (
+                      <Review
+                          key={index}
+                          photo={el.photo}
+                          name={el.name}
+                          surname={el.surname}
+                          reviewText={el.text}
+                          workPhoto={el.wphoto}
+                      />
+                      );
+                  })
+				}
                 </div>
             </div>
         </div>

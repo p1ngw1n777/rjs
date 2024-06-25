@@ -7,15 +7,11 @@ import { categoryToState } from '../../Store/reducer/StatesCategory';
 import { useNavigate } from 'react-router-dom';
 
 const CategoryRow = () => {
-    const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
-    const dispatch = useDispatch();
-    const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.categoryId === null)
-
     useEffect(() => {
         const fetchData = async () => {
           try {
             const response = await dataService.getCategories();
-            dispatch(categoryToState(response.obj2))
+            dispatch(categoryToState(await response.obj2));
           } 
           catch (error) {
             console.error('Ошибка при выполнении запроса:', error);
@@ -24,6 +20,11 @@ const CategoryRow = () => {
         fetchData(); 
       }, []); 
     
+      const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
+      const dispatch = useDispatch();
+      const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.categoryId === null)
+
+
       const Navigate = useNavigate();
       const goToNextPage = (currentElement) => {
         switch(currentElement){

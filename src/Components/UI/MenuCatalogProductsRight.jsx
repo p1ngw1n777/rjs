@@ -1,32 +1,24 @@
 import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import ProductCard from './ProductCard';
 import { productsService } from '../../api/services/products.services';
-import { productsToState } from '../../Store/reducer/StatesProducts';
 import { useLocation } from 'react-router-dom';
-import { authService } from '../../api/services/auth.services'
+
 
 const MenuCatalogProductsRight = ({product}) => {
-    const Navigate = useNavigate();
-   
-    const goToNextPage = (currentElement) => { }
+    const dispatch = useDispatch();
 
     const location = useLocation();
     const { currentElement } = location.state || {};
       
-    const dispatch = useDispatch();
-
-
     useEffect( () => {
         const fetchData = async () => {
           try {
-            const response = await productsService.getProduct('lashes');
-            const response1 = await productsService.postProduct({currentElement}, 'lashes');
+            console.log('susa;', currentElement)
+            //const response = await productsService.getProduct('lashes');
+            const response1 = await productsService.postProduct(currentElement, 'glue');
             //console.log(response1.productsList)
-            //ProductsRender = response.lashes;
-            dispatch(productsToState(response.lashes))
-            console.log('text:', currentElement)
+
+            //dispatch(productsToState(response1.glue))
           } 
           catch (error) {
             console.error('Ошибка при выполнении запроса:');
@@ -34,7 +26,7 @@ const MenuCatalogProductsRight = ({product}) => {
         }; fetchData(); 
       }, []); 
     
-      const ProductsFromRedux = useSelector(state => state.StatesProducts.products);
+      //const ProductsFromRedux = useSelector(state => state.StatesProducts.products);
       
 
     /*const fetchData1 = async (index) => {
@@ -76,12 +68,12 @@ const MenuCatalogProductsRight = ({product}) => {
     };*/
 
     
-    const ProductsFromReduxFiltered = ProductsFromRedux.filter(ProductsFromRedux => ProductsFromRedux.categoryId === 7)
+    //const ProductsFromReduxFiltered = ProductsFromRedux.filter(ProductsFromRedux => ProductsFromRedux.categoryId === 7)
     
 
     return (
-        <div className="products-right">
-            {ProductsFromReduxFiltered.map((el, index) => {
+        <div className='products-right'>
+            {/* {ProductsFromRedux.map((el, index) => {
                 return(
                     
                         <ProductCard
@@ -92,7 +84,7 @@ const MenuCatalogProductsRight = ({product}) => {
                             />
                     
                 );
-            })}
+            })} */}
         </div>
     );
 };
