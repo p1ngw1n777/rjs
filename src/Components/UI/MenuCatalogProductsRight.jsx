@@ -21,7 +21,7 @@ const MenuCatalogProductsRight = ({product}) => {
                 const response1 = await productsService.postProduct(currentElement, nameUrl);
                 try {
                     dispatch(productsToState(response1))
-                    console.log('успешно')
+                    console.log('добавлено успешно')
                 }
                 catch(error){
                     console.log(error)
@@ -35,15 +35,15 @@ const MenuCatalogProductsRight = ({product}) => {
         }, []); 
     
       const ProductsFromRedux = useSelector(state => state.StatesProducts.products);
-      console.log('tut', ProductsFromRedux)
+      console.log('from Redux', ProductsFromRedux)
       
     return (
-        <div className='products-right'>
+        <div className='menu-right'>
              {ProductsFromRedux.map((el, index) => {
                 return(
                         <ProductCard
                             index={index}
-                            imageUrl={el.product_url_photo}
+                            image_Url={el.product_url_photo}
                             productName={el.product_name}
                             price={el.price}
                             />
