@@ -6,12 +6,21 @@ import { useSelector } from 'react-redux';
 
 const MenuCatalogRight = () => {
     const Navigate = useNavigate();
+    const lashesArray = { 
+        idFirst: 7,
+        idSecond: 8,
+        idThird: 9,
+    }
+
+    const glueArray = {
+        idFisrt: 2,
+    }
     const goToNextPage = (currentElement) => {
         switch(currentElement){
             case 0:
                 Navigate('/catalog/lashes', { 
                     state: {
-                        currentElement: currentElement+1, 
+                        currentElement1: lashesArray, 
                         nameCategory: 'lashes',
                     }
                 });
@@ -19,7 +28,7 @@ const MenuCatalogRight = () => {
             case 1:
                 Navigate('/catalog/glue', { 
                     state: {
-                        currentElement: currentElement+1, 
+                        currentElement1: currentElement+1, 
                         nameCategory: 'glue',
                     }
                 });
@@ -27,7 +36,7 @@ const MenuCatalogRight = () => {
             case 2:
                 Navigate('/catalog/preparations', { 
                     state: {
-                        currentElement: currentElement+1, 
+                        currentElement1: currentElement+1, 
                         nameCategory: 'preparations',
                     }
                 });
@@ -35,7 +44,7 @@ const MenuCatalogRight = () => {
             case 3:
                 Navigate('/catalog/twizers', { 
                     state: {
-                        currentElement: currentElement+1, 
+                        currentElement1: currentElement+1, 
                         nameCategory: 'twizers',
                     }
                 });
@@ -43,7 +52,7 @@ const MenuCatalogRight = () => {
             case 4:
                 Navigate('/catalog/consumables', { 
                     state: {
-                        currentElement: currentElement+1, 
+                        currentElement1: currentElement+1, 
                         nameCategory: 'consumables',
                     }
                 });
@@ -51,7 +60,7 @@ const MenuCatalogRight = () => {
             case 5:
                 Navigate('catalog/dop-oborudovanie', { 
                     state: {
-                        currentElement: currentElement+1, 
+                        currentElement1: currentElement+1, 
                         nameCategory: 'dop-oborudovanie',
                     }
                 });

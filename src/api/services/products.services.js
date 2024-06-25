@@ -16,8 +16,8 @@ export const productsService = {
 
     async postProduct(data, nameUrl) {
         try{
-            console.log(data)
-            console.log('/catalog/' + nameUrl)
+            //console.log(data)
+            //console.log('/catalog/' + nameUrl)
             const res = await instance.post('/catalog/' + nameUrl, { data });
             console.log('api: ', res.data);
             

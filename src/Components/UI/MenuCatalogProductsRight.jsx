@@ -9,8 +9,8 @@ const MenuCatalogProductsRight = ({product}) => {
     const dispatch = useDispatch();
 
     const location = useLocation();
-    //const { currentElement, nameUrl } = location.state || {};
-    const currentElement = location.state.currentElement || {};
+
+    const currentElement = location.state.currentElement1 || {};
     const nameUrl = location.state.nameCategory || {};
       
     useEffect( () => {
@@ -19,7 +19,6 @@ const MenuCatalogProductsRight = ({product}) => {
                 console.log('susa;', currentElement)
                 console.log('gsdf:', nameUrl)
                 const response1 = await productsService.postProduct(currentElement, nameUrl);
-                console.log('front:', response1)
                 try {
                     dispatch(productsToState(response1))
                     console.log('успешно')
@@ -27,6 +26,7 @@ const MenuCatalogProductsRight = ({product}) => {
                 catch(error){
                     console.log(error)
                 }
+                console.log('front:', response1)
             } 
             catch (error) {
                 console.error('Ошибка при выполнении запроса:');
@@ -35,6 +35,7 @@ const MenuCatalogProductsRight = ({product}) => {
         }, []); 
     
       const ProductsFromRedux = useSelector(state => state.StatesProducts.products);
+      console.log('tut', ProductsFromRedux)
       
     return (
         <div className='products-right'>
@@ -48,7 +49,7 @@ const MenuCatalogProductsRight = ({product}) => {
                             />
                     
                 );
-            })} 
+            })}  
         </div>
     );
 };
