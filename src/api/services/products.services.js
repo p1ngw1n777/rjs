@@ -15,17 +15,19 @@ export const productsService = {
     },
 
     async postProduct(data, nameUrl) {
-        console.log(data)
-        console.log('/catalog/' + nameUrl)
-
-      const res = await instance.post('/catalog/' + nameUrl, { data });
-      console.log('TUTA: ', res);
-      
-      if(!res){
-        console.log('Error 228')
-
-      return res;
-      }
+        try{
+            console.log(data)
+            console.log('/catalog/' + nameUrl)
+            const res = await instance.post('/catalog/' + nameUrl, { data });
+            console.log('api: ', res.data);
+            
+            if(!res){
+                console.log('Error 228')
+            }
+            return res.data;
+        } catch(error) {
+            console.log('Ошибка при получении товаров c сервера: ', nameUrl, 'Ошибка: ', error)
+        }
     }
 }
     // async getLashes() {

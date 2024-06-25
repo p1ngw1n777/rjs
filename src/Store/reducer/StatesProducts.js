@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export const counterSlice1 = createSlice({
-    name: 'counterOne',
+    name: 'count3',
     initialState,
     reducers:{
         productsToState: (state, action) => {

@@ -12,7 +12,7 @@ const MenuCatalogRight = () => {
                 Navigate('/catalog/lashes', { 
                     state: {
                         currentElement: currentElement+1, 
-                        //nameCategory: 'lashes',
+                        nameCategory: 'lashes',
                     }
                 });
                 break;
