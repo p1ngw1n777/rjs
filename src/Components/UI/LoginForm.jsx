@@ -12,7 +12,6 @@ const LoginForm = () => {
     const handleSubmit = async (event) => {    
         event.preventDefault();
         try{
-            //const responce = await userService.getUser({username, password});
             const responce = await userService.postLoginUser({username, password})
             console.log(responce.success)
             if(responce.success === true)
