@@ -16,7 +16,15 @@ const LoginForm = () => {
             console.log(responce.success)
             if(responce.success === true)
             {
-                alert('Good');
+                localStorage.setItem("user", JSON.stringify(responce.user));
+                if(responce.user.role.role_name === "admin"){
+                    navigate('/adminka')
+                    console.log('Вы вошли под админом')
+                }
+                else{
+                    navigate('/user/cabinet')
+                }
+                    
             }
             else
             {

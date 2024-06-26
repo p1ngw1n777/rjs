@@ -16,6 +16,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 import './global.css'
 import { Provider } from 'react-redux';
 import { persistor, store } from './Store/store';
+import PageUserCabinet from './Components/Pages/PageUserCabinet';
+import PageAdmin from './Components/Pages/PageAdmin';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,7 +48,15 @@ const router = createBrowserRouter([
     element: <PageContacty/>
   },
   {
-    path: "catalog/lashes",
+    path: "/adminka",
+    element: <PageAdmin/>
+  },
+  {
+    path: "user/cabinet",
+    element: <PageUserCabinet/>
+  },
+  {
+    path:  "catalog/lashes", 
     element: <PageForQueryCatalog/>
   },
   {
@@ -70,6 +80,7 @@ const router = createBrowserRouter([
     element: <PageForQueryCatalog/>
   }
 ]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
