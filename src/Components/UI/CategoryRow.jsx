@@ -7,6 +7,9 @@ import { categoryToState } from '../../Store/reducer/StatesCategory';
 import { useNavigate } from 'react-router-dom';
 
 const CategoryRow = () => {
+    const dispatch = useDispatch();
+    const Navigate = useNavigate();
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -18,44 +21,76 @@ const CategoryRow = () => {
           }
         };
         fetchData(); 
-      }, []); 
-    
-      const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
-      const dispatch = useDispatch();
-      const CategoryFromReduxFiltered = CategoryFromRedux.filter(CategoryFromRedux => CategoryFromRedux.categoryId === null)
+    }, []); 
+        
+    const lashesArray = { 
+        idFirst: 7,
+        idSecond: 8,
+        idThird: 9,
+    }
 
-
-      const Navigate = useNavigate();
-      const goToNextPage = (currentElement) => {
+    const goToNextPage = (currentElement) => {
         switch(currentElement){
             case 0:
-                Navigate('/lashes');
+                Navigate('/catalog/lashes', { 
+                    state: {
+                        currentElement1: lashesArray, 
+                        nameCategory: 'lashes',
+                    }
+                });
                 break;
             case 1:
-                Navigate('/glue');
+                Navigate('/catalog/glue', { 
+                    state: {
+                        currentElement1: currentElement+1, 
+                        nameCategory: 'glue',
+                    }
+                });
                 break;
             case 2:
-                Navigate('/preparations');
+                Navigate('/catalog/preparations', { 
+                    state: {
+                        currentElement1: currentElement+1, 
+                        nameCategory: 'preparations',
+                    }
+                });
                 break;
             case 3:
-                Navigate('/twizers');
+                Navigate('/catalog/twizers', { 
+                    state: {
+                        currentElement1: currentElement+1, 
+                        nameCategory: 'twizers',
+                    }
+                });
                 break;
             case 4:
-                Navigate('/consumables');
+                Navigate('/catalog/consumables', { 
+                    state: {
+                        currentElement1: currentElement+1, 
+                        nameCategory: 'consumables',
+                    }
+                });
                 break;
             case 5:
-                Navigate('/dop-oborudovanie');
+                Navigate('catalog/dop-oborudovanie', { 
+                    state: {
+                        currentElement1: currentElement+1, 
+                        nameCategory: 'dop-oborudovanie',
+                    }
+                });
                 break;
             default:
                 console.log('Error: default')
                 break;
         }
-      }
+    }
     
+    const CategoryFromRedux = useSelector(state => state.StatesCategory.category);
+
     return (
         <>
             <div className="categoryRow">
-                {CategoryFromReduxFiltered.map((el, index) => {
+                {CategoryFromRedux.map((el, index) => {
                     return (
                         <div key={index} onClick={() => goToNextPage(index)}>
                             <CategoryCard

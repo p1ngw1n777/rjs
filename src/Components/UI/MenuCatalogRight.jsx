@@ -12,9 +12,6 @@ const MenuCatalogRight = () => {
         idThird: 9,
     }
 
-    const glueArray = {
-        idFisrt: 2,
-    }
     const goToNextPage = (currentElement) => {
         switch(currentElement){
             case 0:
@@ -58,7 +55,7 @@ const MenuCatalogRight = () => {
                 });
                 break;
             case 5:
-                Navigate('catalog/dop-oborudovanie', { 
+                Navigate('/catalog/dop-oborudovanie', { 
                     state: {
                         currentElement1: currentElement+1, 
                         nameCategory: 'dop-oborudovanie',
