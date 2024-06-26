@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import { userService } from '../../api/services/auth.services';
 import { useNavigate } from 'react-router-dom';
-import "../css/text.css";
+import "../css/LoginForm.css";
 
 const LoginForm = () => {
     const [username, setUserName] = useState('');
@@ -12,11 +12,22 @@ const LoginForm = () => {
     const handleSubmit = async (event) => {    
         event.preventDefault();
         try{
-            const responce = await userService.getUser({username, password});
-            alert('Good');
+            //const responce = await userService.getUser({username, password});
+            const responce = await userService.postLoginUser({username, password})
+            console.log(responce.success)
+            if(responce.success === true)
+            {
+                alert('Good');
+            }
+            else
+            {
+                alert('Bad')
+            }
+            
         }
-        catch{
-            alert('Bad');
+        catch (error)
+        {
+            console.log(error)
         }
     }
 
@@ -33,40 +44,32 @@ const LoginForm = () => {
     }
 
     return (
-        <div>
-            <div className='test'>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="username">Имя пользователя:</label>
-                        <input
-                            type="text"
-                            id="username"
-                            value={username}
-                            onChange={handleUsernameChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Пароль:</label>
-                        <input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={handlePasswordChange}
-                        />
-                        
-                    
-                    </div>
-                    <div>
-                        <button type="submit"
-                            onClick={async (e) => await handleSubmit(e)}>Войти</button>
-                    </div>
-                    <div>
-                        <a href='#'
-                            onClick={toToReg}>У меня уже есть аккаунт</a>
-                    </div>
+        <div className="login-container">
+            <div className="login-left">
+                <img src="https://dominilash.ru/upload/CMax/3f0/ftr0l3hteu750kkk1flql1ooakpy43wu/dominilash_logo.svg" alt="Logo" className="logo" />
+            </div>
+            <div className="login-right">
+                <h2>Вход в аккаунт</h2>
+                <form className="login-form">
+                <label htmlFor="login">Логин <span>*</span></label>
+                <input type="text" id="login" name="login" required value={username} onChange={handleUsernameChange}/>
+
+                <label htmlFor="password">Пароль <span>*</span></label>
+                <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required />
+
+                <div className="options">
+                    <label>
+                    <input type="checkbox" name="remember" /> Запомнить меня
+                    </label>
+                    <a href="#">Забыли пароль?</a>
+                </div>
+
+                <button type="submit" className="login-button" onClick={async (e) => await handleSubmit(e)}>Войти</button>
+                <a href="#" className="back" onClick={toToReg}>Зарегистрироваться</a>
                 </form>
             </div>
         </div>
+
     );
 };
 
