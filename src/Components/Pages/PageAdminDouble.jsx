@@ -59,7 +59,7 @@ const PageAdminDouble = () => {
 //         { Header: 'Роль', accessor: 'role.role_name' },
 //       ]) 
 
-  const data = useSelector(state => state.StatesTable.review);
+  const data = useSelector(state => state.StatesTable.dataOfTable);
   const columns = useSelector(state => state.StatesTable.columnOfTable);
   console.log('получили из', columns)
 
