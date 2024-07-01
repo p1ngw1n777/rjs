@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const instance = axios.create({
   //baseURL: 'http://127.0.0.1:3001/',
-  baseURL: 'https://dominilashping.ru',
+  baseURL: 'https://dominilashping.ru/',
   headers: {
     'Content-Type': 'application/json',
     "Cache-Control": "no-cache",
