@@ -134,11 +134,7 @@ const PageAdminDouble = () => {
       alert('Пожалуйста, выберите ID и столбец');
       return;
     }
-
-    //const data = { select: selectedId, id: idd};
-
     
-
     const updatedData = data.map(row => {
       if (row.id === selectedId) {
         return { ...row, [selectedColumn]: newValue };
