@@ -18,6 +18,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './Store/store';
 import PageUserCabinet from './Components/Pages/PageUserCabinet';
 import PageAdmin from './Components/Pages/PageAdmin';
+import PageCart from './Components/Pages/PageCart';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
   {
     path: "catalog/dop-oborudovanie",
     element: <PageForQueryCatalog/>
+  },
+  {
+    path: "cart",
+    element: <PageCart/>
   }
 ]);
 

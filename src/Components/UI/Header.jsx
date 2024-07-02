@@ -16,6 +16,10 @@ const Header = () => {
 		}
 	}
 
+	const goToCorsina = (event) => {
+		navigate('/cart')
+	}
+
 	const goToHome = (event) => {
 		navigate('/')
 	}
@@ -44,6 +48,8 @@ const Header = () => {
 					<p className="creds-week-daily">Пн - Пт с 10:00 до 18:00</p>
 					<h3 className="creds-number">+7 (495) 777-09-03</h3>
 				</div>
+				<button className="login-button"
+						onClick={goToCorsina}>Корзина</button>
 				<button className="login-button"
 						onClick={goToLogin}>Выйти</button>
 				</div>

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-
-import { userService } from '../../api/services/auth.services';
+import { userSerivce } from '../../api/services/auth.services';
 import { useNavigate } from 'react-router-dom';
 import "../css/LoginForm.css";
+import { userService } from '../../api/services/auth.services';
 
 const LoginForm = () => {
     const [username, setUserName] = useState('');
@@ -20,6 +20,10 @@ const LoginForm = () => {
                 if(responce.user.role.role_name === "admin"){
                     navigate('/adminka')
                     console.log('Вы вошли под админом')
+                }
+                else if(responce.user.role.role_name === "user"){
+                    navigate('/');
+                    console.log('приятных покупок')
                 }
                 else{
                     navigate('/user/cabinet')
