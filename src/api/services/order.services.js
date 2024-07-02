@@ -4,7 +4,7 @@ export const orderService = {
   //метод на проверку пользователя в базе
   async postCreateOrder(data){
     try {
-      //console.log("Получили на API: ", { data })
+      console.log("Получили на API: ", { data })
       const res = await instance.post('cart/order', { data })
       //console.log("От севера на API: ", res.data)
 

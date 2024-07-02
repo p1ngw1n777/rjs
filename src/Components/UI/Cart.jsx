@@ -36,16 +36,16 @@ const Cart = () => {
   const goToOrder = async () => {
     let loginUser = JSON.parse(localStorage.getItem('user')) || [];
     console.log(JSON.stringify({ cartItems, total, loginUser }))
-    //const response = await orderService.postCreateOrder(JSON.stringify({ cartItems, total }),)
+    const response = await orderService.postCreateOrder(JSON.stringify({cartItems, total, loginUser}))
 
-    // if (response.ok) {
+    if (response.status = true) {
     //   const result = await response.json();
     //   // Обработка успешного запроса (например, перенаправление на страницу подтверждения)
-    //   console.log('Покупка оформлена!', result);
-    // } else {
-    //   // Обработка ошибок
-    //   console.error('Ошибка при оформлении покупки');
-    // }
+        alert('Покупка оформлена!');
+    } else {
+       // Обработка ошибок
+       console.error('Ошибка при оформлении покупки');
+     }
   };
 
   return (
@@ -90,7 +90,6 @@ const Cart = () => {
       </table>
       <div className="cart-summary">
         <h2>Итого: {total} ₽</h2>
-        <input type="text" placeholder="Есть промокод?" />
         <button className="checkout-button" onClick={goToOrder}>Перейти к оформлению</button>
       </div>
     </div>

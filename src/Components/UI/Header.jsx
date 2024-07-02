@@ -20,6 +20,10 @@ const Header = () => {
 		navigate('/cart')
 	}
 
+	const goToLK = (event) => {
+		navigate('/user/cabinet')
+	}
+
 	const goToHome = (event) => {
 		navigate('/')
 	}
@@ -50,6 +54,8 @@ const Header = () => {
 				</div>
 				<button className="login-button"
 						onClick={goToCorsina}>Корзина</button>
+				<button className="login-button"
+						onClick={goToLK}>Личный кабинет</button>
 				<button className="login-button"
 						onClick={goToLogin}>Выйти</button>
 				</div>
