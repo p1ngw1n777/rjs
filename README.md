@@ -20,17 +20,19 @@
   <li>Main page:</li>
 </ul>
 
-![main](https://github.com/user-attachments/assets/e15fbe39-75d4-4d72-af47-0217f6f7ee20)
+![main image](https://github.com/user-attachments/assets/e15fbe39-75d4-4d72-af47-0217f6f7ee20)
 
 <ul>
   <li>Register page:</li>
 </ul>
 
+![reg image](https://github.com/user-attachments/assets/3faa8a97-87a2-41a1-bbf0-dbd02e0fa19f)
 
 <ul>
   <li>Catalog page:</li>
 </ul>
 
+![catalog image](https://github.com/user-attachments/assets/ac62ec6c-b712-4156-84e6-dd4dd1688972)
 
 # Getting Started with Create React App
 
