@@ -20,6 +20,7 @@
   <li>Main page:</li>
 </ul>
 
+![main](https://github.com/user-attachments/assets/e15fbe39-75d4-4d72-af47-0217f6f7ee20)
 
 <ul>
   <li>Register page:</li>
