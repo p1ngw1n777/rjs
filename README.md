@@ -5,7 +5,7 @@
   <li>JavaScript</li>
   <li>ReactJs</li>
   <li>react-redux</li>
-  <li>axios (^1.6.7)</li>
+  <li>axios</li>
 </ul>
 
 <h2>Features: </h2>
