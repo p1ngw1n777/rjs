@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../css/CategoryCard.css"
+import "../../UI/catalogUI/CategoryCard.css"
 
 const CategoryCard = ({index1, imageUrl, category}) => {
     return (

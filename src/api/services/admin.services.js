@@ -1,18 +1,31 @@
 import { instance } from "../api.instance"
 
 export const adminService = {
+	async deleteData(tableName, idItem) {
+		try{
+			const nama = tableName;
+			const id = idItem;
+			const res = await instance.post('/adminka/' + nama, {tableName, idItem});
+			console.log(res.data)
+			return res.data;
+		}
+		catch(error) {
+			console.log('Ошибка при получении данных с сервера: ', tableName, 'Ошибка: ', error)
+		}
+	},
 
-  async getData(tableName) {
-    try{
-        const nama = tableName
-        const res = await instance.get('/adminka/' + nama);
-        console.log(res.data)
-        return res.data;
-    }
-    catch(error) {
-        console.log('Ошибка при получении данных с сервера: ', tableName, 'Ошибка: ', error)
-    }
-},
+
+  	async getData(tableName) {
+		try{
+			const nama = tableName
+			const res = await instance.get('/adminka/' + nama);
+			console.log(res.data)
+			return res.data;
+		}
+		catch(error) {
+			console.log('Ошибка при получении данных с сервера: ', tableName, 'Ошибка: ', error)
+		}
+	},
   
   async postNewData(data){
     try {

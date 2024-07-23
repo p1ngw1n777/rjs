@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../UI/Header';
-import Menu from '../Menu';
+import Header from '../Header/Header';
+import HeaderMenu from '../Header/headerMenu';
 import Footer from '../Footer/Footer';
 
 const PageUserCabinet = () => {
     return (
         <div>
             <Header/>
-            <Menu/>
+            <HeaderMenu/>
             <div>
                 Личный кабинет. В разработке.
             </div>

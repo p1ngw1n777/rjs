@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/stylePage1.css';
+import '../Pages/indexPage/stylePage1.css';
 
 
 const Header = ({title}) => {

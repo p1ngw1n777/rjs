@@ -1,3 +1,36 @@
+<h1>TypeScript todo app created with ReactJs</h1>
+
+<h2>Used:</h2>
+<ul>
+  <li>JavaScript</li>
+  <li>ReactJs</li>
+  <li>react-redux</li>
+  <li>axios (^1.6.7)</li>
+</ul>
+
+<h2>Features: </h2>
+<ul>
+  <li>Create order</li>
+  <li>Registration new account</li>
+  <li>To administrate order</li>
+</ul>
+
+<h2>Pages:</h2>
+<ul>
+  <li>Main page:</li>
+</ul>
+
+
+<ul>
+  <li>Register page:</li>
+</ul>
+
+
+<ul>
+  <li>Catalog page:</li>
+</ul>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

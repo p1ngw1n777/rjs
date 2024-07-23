@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Review from "../../UI/Review";
+import Review from "./Review";
 import { useDispatch, useSelector } from "react-redux";
 import { dataService } from "../../../api/services/data.services";
 import { reviewToState } from "../../../Store/reducer/StatesSlice"
