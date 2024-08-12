@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import "./RegisterForm.css"
+import "./modalRegistration/RegisterForm.css"
 import { userService } from '../../../api/services/auth.services';
 
 const RegisterForm = () => {
@@ -10,7 +10,7 @@ const RegisterForm = () => {
         confirmPassword: '',
         agree: false
       });
-    
+
       const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({
@@ -18,7 +18,7 @@ const RegisterForm = () => {
           [name]: type === 'checkbox' ? checked : value
         });
       };
-    
+
       const handleSubmit = async (e) => {
         e.preventDefault();
         const { password, confirmPassword } = formData;
@@ -40,7 +40,7 @@ const RegisterForm = () => {
             {
                 alert(responce.message)
             }
-            
+
         }
         catch (error)
         {

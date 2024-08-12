@@ -16,17 +16,13 @@ const MenuCatalogProductsRight = ({product}) => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                console.log('susa;', currentElement)
-                console.log('gsdf:', nameUrl)
                 const response1 = await productsService.postProduct(currentElement, nameUrl);
                 try {
                     dispatch(productsToState(response1))
-                    console.log('добавлено успешно')
                 }
                 catch(error){
                     console.log(error)
                 }
-                console.log('front:', response1)
             } 
             catch (error) {
                 console.error('Ошибка при выполнении запроса:');

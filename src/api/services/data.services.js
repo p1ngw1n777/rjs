@@ -11,18 +11,6 @@ export const dataService = {
       }
   },
 
-  async getLashes() {
-    try {
-        const res = await instance.get('catalog/lashes');
-        console.log(res.data)
-        return res.data;
-    }
-    catch(error){
-        console.error('Ошибка при выполнении запроса:', error);
-        throw error;
-    }
-},
-
   async getCategories() {
     try {
       const res = await instance.get('/');

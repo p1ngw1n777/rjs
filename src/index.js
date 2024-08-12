@@ -10,6 +10,7 @@ import PageForQueryCatalog from './Components/Pages/catalogPage/PageForQueryCata
 import PageOpt from './Components/Pages/servicesPage/PageOpt';
 import PageDelivery from './Components/Pages/servicesPage/PageDelivery';
 import PageContacty from './Components/Pages/servicesPage/PageContacty';
+import modalAuth from "./Components/UI/authUI/modalLogin/modalAuth";
 import { PersistGate } from 'redux-persist/integration/react'
 
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/loginform",
-    element: <PageLogin/>
+    element: <modalAuth/>
   }, 
   {
     path: "/registration",
