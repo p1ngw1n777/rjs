@@ -7,6 +7,13 @@ body {
     background-color: #f4f4f9;
     margin: 0;
   }
+  .register-link {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #551A8B;
+    text-decoration: none;
+  }
   
   .container {
     background: #fff;

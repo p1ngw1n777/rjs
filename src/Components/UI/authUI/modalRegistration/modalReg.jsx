@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
-import {userService} from "../../../../api/services/auth.services";
-import "./RegisterForm.css"
+import React, { useState } from 'react';
+import { userService } from "../../../../api/services/auth.services";
+import "./RegisterForm.css";
+import { useNavigate } from "react-router-dom";
+import ModalAuth from "../modalLogin/modalAuth";
 
-function ModalReg() {
+function ModalReg({ closeModal }) {  // Принимаем функцию через пропсы
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -10,7 +12,13 @@ function ModalReg() {
         confirmPassword: '',
         agree: false
     });
+    const [isAuthMode, setIsAuthMode] = useState(false); // состояние для переключения на регистрацию
 
+    const navigate = useNavigate();
+
+    if (isAuthMode) {
+        return <ModalAuth closeModal={closeModal} />;
+    }
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({
@@ -29,22 +37,15 @@ function ModalReg() {
         const username = formData.fullName;
         const email = formData.email;
         const roleId = 2;
-        try{
-            const responce = await userService.postRegistrationUser({username, password, email, roleId})
-            console.log('success: ', responce.success)
-            if(responce.success === true)
-            {
-                alert(responce.message);
+        try {
+            const response = await userService.postRegistrationUser({ username, password, email, roleId });
+            if (response.success === true) {
+                alert(response.message);
+            } else {
+                alert(response.message);
             }
-            else
-            {
-                alert(responce.message)
-            }
-
-        }
-        catch (error)
-        {
-            console.log(error)
+        } catch (error) {
+            console.log(error);
         }
     };
 
@@ -111,9 +112,10 @@ function ModalReg() {
                     </label>
                 </div>
                 <button type="submit" className='button3'>Зарегистрироваться</button>
-                <a href="#" className="register-link"
-                   onClick={() => window.dispatchEvent(new CustomEvent("show-login"))}>У меня уже есть аккаунт</a>
 
+                <a href="#" className="register-link" onClick={() => setIsAuthMode(true)}>
+                    У меня уже есть аккаунт
+                </a>
             </form>
         </div>
     );

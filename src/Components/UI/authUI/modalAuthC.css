@@ -99,6 +99,10 @@ input[type="checkbox"] {
     color: #551A8B;
 }
 
+.options input {
+    margin-left: 15px;
+}
+
 .login-form .login-button {
     width: 100%;
     padding: 10px;

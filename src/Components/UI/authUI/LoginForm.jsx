@@ -23,6 +23,7 @@ const LoginForm = () => {
                 }
                 else if(responce.user.role.role_name === "user"){
                     navigate('/');
+
                     console.log('приятных покупок')
                 }
                 else{
@@ -61,7 +62,7 @@ const LoginForm = () => {
             </div>
             <div className="login-right">
                 <h2>Вход в аккаунт</h2>
-                <form className="login-form">
+                <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="login">Логин <span>*</span></label>
                 <input type="text" id="login" name="login" required value={username} onChange={handleUsernameChange}/>
 
