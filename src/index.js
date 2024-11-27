@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { RouterProvider,  createBrowserRouter} from 'react-router-dom';
 import Page1 from './Components/Pages/indexPage/Page1';
-import PageLogin from './Components/Pages/authPage/PageLogin';
-import PageReg from './Components/Pages/authPage/PageReg';
 import PageCatalog from './Components/Pages/catalogPage/PageCatalog'
 import PageForQueryCatalog from './Components/Pages/catalogPage/PageForQueryCatalog';
 import PageOpt from './Components/Pages/servicesPage/PageOpt';
 import PageDelivery from './Components/Pages/servicesPage/PageDelivery';
 import PageContacty from './Components/Pages/servicesPage/PageContacty';
-import modalAuth from "./Components/UI/authUI/modalLogin/modalAuth";
 import { PersistGate } from 'redux-persist/integration/react'
 
 
@@ -25,14 +22,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <Page1/>
   },
-  {
-    path: "/loginform",
-    element: <modalAuth/>
-  }, 
-  {
-    path: "/registration",
-    element: <PageReg/>
-  },
+  // {
+  //   path: "/loginform",
+  //   element: <modalAuth/>
+  // },
+  // {
+  //   path: "/registration",
+  //   element: <PageReg/>
+  // },
   {
     path: "/catalog",
     element: <PageCatalog/>

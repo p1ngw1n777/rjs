@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import '../modalAuthC.css';
+import '../indexAuth.css';
 import { useNavigate } from "react-router-dom";
 import { userService } from "../../../../api/services/auth.services";
 import ModalReg from "../modalRegistration/modalReg";  // импортируем компонент регистрации
+import { validation } from "../../../../utils/validation";
 
 function ModalAuth({ closeModal }) {
     const [username, setUserName] = useState('');
@@ -12,22 +13,34 @@ function ModalAuth({ closeModal }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            const responce = await userService.postLoginUser({ username, password });
-            if (responce.success === true) {
-                localStorage.setItem("user", JSON.stringify(responce.user));
-                if (responce.user.role.role_name === "admin") {
-                    navigate('/adminka');
-                } else if (responce.user.role.role_name === "user") {
-                    navigate('/');
+        if (validation(username, password)) {
+            try {
+                const responce = await userService.postLoginUser({ username, password });
+                if (responce.success === true) {
+                    localStorage.setItem("user", JSON.stringify(responce.user));
+                    if (responce.user.role.role_name === "admin") {
+                        navigate('/adminka');
+                        closeModal();
+                    } else if (responce.user.role.role_name === "user") {
+                        navigate('/');
+                        closeModal();
+                    } else {
+                        navigate('/user/cabinet');
+                        closeModal();
+                    }
                 } else {
-                    navigate('/user/cabinet');
+                    alert('Bad');
                 }
-            } else {
-                alert('Bad');
+
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log(error);
+        }
+        else
+        {
+            //
+            //потом нужно сделать обработчик ошибок и красивые alert
+            //
         }
     };
 

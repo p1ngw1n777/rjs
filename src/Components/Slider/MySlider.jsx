@@ -16,7 +16,7 @@ const MySlider = () => {
       };
 
     return (
-        <SliderComponent {...settings}   style={{display: 'block'}}>
+        <SliderComponent {...settings} style={{display: 'block'}}>
             <div>
                 <img src="https://dominilash.ru/upload/iblock/2fa/bq663b44hleatq3uh3xt6c6i735era57/1920-na-540-2.jpg" alt="Slide 1" />
             </div>

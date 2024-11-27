@@ -133,7 +133,7 @@ const Header = () => {
 
 				</div>
 				</header>
-			{isModalOpen && <IndexAuth closeModal={closeModal} />}
+			{isModalOpen && <IndexAuth isLogin={isLoggin} closeModal={closeModal} />}
 		</>
 
 	);
